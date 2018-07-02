@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from models import Board
 
-def home(request):
+def home_001(request):
     boards = Board.objects.all()
     boards_name = list()
 
@@ -16,4 +16,6 @@ def home(request):
 
     return HttpResponse(response_html)
 
-# Create your views here.
+def home(request):
+    boards = Board.objects.all()
+    return render(request, "home.html", {"boards": boards})
