@@ -18,4 +18,4 @@ def home_001(request):
 
 def home(request):
     boards = Board.objects.all()
-    return render(request, "home.html", {"boards": boards})
+    return render(request, "home_001.html", {"boards": boards})
