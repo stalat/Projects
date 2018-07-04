@@ -19,3 +19,8 @@ def home_001(request):
 def home(request):
     boards = Board.objects.all()
     return render(request, "home_001.html", {"boards": boards})
+
+def board_topics(request, pk):
+    board = Board.objects.get(pk=pk)
+    return render(request, 'topics.html', {'board': board})
+    # return HttpResponse("This is a test template")
