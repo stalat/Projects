@@ -16,8 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from apps.boards import views
+from django.conf.urls import url, include
 
 urlpatterns = [
-    url(r'^$', views.home, name='home'),
+    #url(r'^$', views.home, name='home'),
     url(r'^admin/', admin.site.urls),
+    url(r'^boards/', include('apps.boards.urls'))
 ]
