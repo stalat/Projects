@@ -7,16 +7,6 @@ body, html {
 	height: 100% !important;
 }
 
-.customone{
-    display: flex;
-}
-.fixed{
-    width: 200px;
-}
-.flex-item{
-    flex-grow: 1;
-}
-
 h1 {
 	font-weight: 700;
 }
