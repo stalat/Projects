@@ -6,6 +6,17 @@ body, html {
 	width: 100% !important;
 	height: 100% !important;
 }
+
+.customone{
+    display: flex;
+}
+.fixed{
+    width: 200px;
+}
+.flex-item{
+    flex-grow: 1;
+}
+
 h1 {
 	font-weight: 700;
 }
@@ -173,7 +184,7 @@ hr {
 	padding: 100px 0;
 	text-align: center;
 	color: #fff;
-	background: url(../img/IMG_5232.JPG) no-repeat center top;
+	/*background: url(../img/IMG_5232.JPG) no-repeat center top;*/
 	background-color: #7bc3d1;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -661,8 +672,8 @@ section {
 	padding: 120px 0;
 }
 header .intro-text {
-	padding-top: 300px;
-	padding-bottom: 200px;
+	padding-top: 150px;
+	padding-bottom: 100px;
 }
 .timeline:before {
 	left: 50%;
