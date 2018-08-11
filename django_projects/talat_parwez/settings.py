@@ -121,8 +121,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
 
-STATIC_ROOT = '/home/talat/Talat/git_repos/django-site/talat_parwez/static/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'talat_parwez/media')
+
+#STATIC_ROOT = '/home/talat/Talat/git_repos/django-site/talat_parwez/static/'
 
 STATICFILES_DIRS = (
                        '/home/talat/Talat/git_repos/django-site/talat_parwez/sin_app/static/',
