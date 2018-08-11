@@ -18,8 +18,19 @@ class UserProfile(models.Model):
     def __str__(self):
         return self.user.username
 
-    def create_profile(sender, **kwargs):
-        if kwargs['created']:
-            user_profile = UserProfile.objects.create(user=kwargs['instance'])
+class Portfolio(models.Model):
+    
+    image_01 = models.ImageField(upload_to='portfolio_image', blank=True)
+    image_02 = models.ImageField(upload_to='portfolio_image', blank=True)
+    image_03 = models.ImageField(upload_to='portfolio_image', blank=True)
+    image_04 = models.ImageField(upload_to='portfolio_image', blank=True)
+    image_05 = models.ImageField(upload_to='portfolio_image', blank=True)
+    image_06 = models.ImageField(upload_to='portfolio_image', blank=True)
+    image_07 = models.ImageField(upload_to='portfolio_image', blank=True)
+    image_08 = models.ImageField(upload_to='portfolio_image', blank=True)
 
-    post_save.connect(create_profile, sender=User)
+    # def create_profile(sender, **kwargs):
+    #     if kwargs['created']:
+    #         user_profile = UserProfile.objects.create(user=kwargs['instance'])
+
+    # post_save.connect(create_profile, sender=User)
