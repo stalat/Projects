@@ -83,11 +83,10 @@
       <hr>
     </div>
     <div class="row">
-      <div class="col-md-12 text-center"><img src="{% static 'img/about.png' %}" class="img-responsive"></div>
+      <div class="col-md-12 text-center"><img src="{{ user.userprofile.image.url }}" class="img-responsive"></div>
       <div class="col-md-8 col-md-offset-2">
         <div class="about-text">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare.</p>
+          <p>{{ user.userprofile.description }}</p>
           <p class="text-center"><a class="btn btn-primary" href="#"><i class="fa fa-download"></i> Download Resume</a></p>
         </div>
       </div>
@@ -144,80 +143,84 @@
       <div class="clearfix"></div>
     </div>
     <div class="row">
-      <div class="portfolio-items">
-        <div class="col-sm-6 col-md-3 col-lg-3 web">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="{% static 'img/portfolio/01-large.jpg' %}" title="Project description" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <small>Web Design</small> </div>
-              <img src="{% static 'img/portfolio/01-small.jpg' %}" class="img-responsive" alt="Project Title"> </a> </div>
+      {% for image in portfolio %}
+        <div class="portfolio-items">
+          <div class="col-sm-6 col-md-3 col-lg-3 web">
+            <div class="portfolio-item">
+              <div class="hover-bg"> <a href="{% static 'img/portfolio/01-large.jpg' %}" title="Project description" rel="prettyPhoto">
+                <div class="hover-text">
+                  <h4>Project Title</h4>
+                  <small>Web Design</small> </div>
+                <img src="{{ image.image_01.url }}" class="img-responsive" alt="Project Title"></a> 
+              </div>
           </div>
         </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 app">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="{% static 'img/portfolio/02-large.jpg' %}" title="Project description" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <small>App Development</small> </div>
-              <img src="{% static 'img/portfolio/02-small.jpg' %}" class="img-responsive" alt="Project Title"> </a> </div>
+          <div class="col-sm-6 col-md-3 col-lg-3 app">
+            <div class="portfolio-item">
+              <div class="hover-bg"> <a href="{% static 'img/portfolio/02-large.jpg' %}" title="
+            Project description" rel="prettyPhoto">
+                <div class="hover-text">
+                  <h4>Project Title</h4>
+                  <small>App Development</small> </div>
+                <img src="{{ image.image_02.url }}" class="img-responsive" alt="Project Title"> </a> </div>
+            </div>
           </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 web">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="{% static 'img/portfolio/03-large.jpg' %}" title="Project description" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <small>Web Design</small> </div>
-              <img src="{% static 'img/portfolio/03-small.jpg' %}" class="img-responsive" alt="Project Title"> </a> </div>
+          <div class="col-sm-6 col-md-3 col-lg-3 web">
+            <div class="portfolio-item">
+              <div class="hover-bg"> <a href="{% static 'img/portfolio/03-large.jpg' %}" title="Project description" rel="prettyPhoto">
+                <div class="hover-text">
+                  <h4>Project Title</h4>
+                  <small>Web Design</small> </div>
+                <img src="{{ image.image_03.url }}" class="img-responsive" alt="Project Title"> </a> </div>
+            </div>
           </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 web">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="{% static 'img/portfolio/04-large.jpg' %}" title="Project description" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <small>Web Design</small> </div>
-              <img src="{% static 'img/portfolio/04-small.jpg' %}" class="img-responsive" alt="Project Title"> </a> </div>
+          <div class="col-sm-6 col-md-3 col-lg-3 web">
+            <div class="portfolio-item">
+              <div class="hover-bg"> <a href="{% static 'img/portfolio/04-large.jpg' %}" title="Project description" rel="prettyPhoto">
+                <div class="hover-text">
+                  <h4>Project Title</h4>
+                  <small>Web Design</small> </div>
+                <img src="{{ image.image_04.url }}" class="img-responsive" alt="Project Title"> </a> </div>
+            </div>
           </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 app">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="{% static 'img/portfolio/05-large.jpg' %}" title="Project description" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <small>App Development</small> </div>
-              <img src="{% static 'img/portfolio/05-small.jpg' %}" class="img-responsive" alt="Project Title"> </a> </div>
+          <div class="col-sm-6 col-md-3 col-lg-3 app">
+            <div class="portfolio-item">
+              <div class="hover-bg"> <a href="{% static 'img/portfolio/05-large.jpg' %}" title="Project description" rel="prettyPhoto">
+                <div class="hover-text">
+                  <h4>Project Title</h4>
+                  <small>App Development</small> </div>
+                <img src="{{ image.image_05.url }}" %}" class="img-responsive" alt="Project Title"> </a> </div>
+            </div>
           </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 branding">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="{% static 'img/portfolio/06-large.jpg' %}" title="Project description" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <small>Branding</small> </div>
-              <img src="{% static 'img/portfolio/06-small.jpg' %}" class="img-responsive" alt="Project Title"> </a> </div>
+          <div class="col-sm-6 col-md-3 col-lg-3 branding">
+            <div class="portfolio-item">
+              <div class="hover-bg"> <a href="{% static 'img/portfolio/06-large.jpg' %}" title="Project description" rel="prettyPhoto">
+                <div class="hover-text">
+                  <h4>Project Title</h4>
+                  <small>Branding</small> </div>
+                <img src="{{ image.image_06.url }}" class="img-responsive" alt="Project Title"> </a> </div>
+            </div>
           </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 branding app">
-          <div class="portfolio-item">
+          <div class="col-sm-6 col-md-3 col-lg-3 branding app">
+            <div class="portfolio-item">
             <div class="hover-bg"> <a href="{% static 'img/portfolio/07-large.jpg' %}" title="Project description" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <small>App Development, Branding</small> </div>
-              <img src="{% static 'img/portfolio/07-small.jpg' %}" class="img-responsive" alt="Project Title"> </a> </div>
+                <div class="hover-text">
+                  <h4>Project Title</h4>
+                  <small>App Development, Branding</small> </div>
+                <img src="{{ image.image_07.url }}" class="img-responsive" alt="Project Title"> </a> </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3 col-lg-3 web">
+            <div class="portfolio-item">
+              <div class="hover-bg"> <a href="{% static 'img/portfolio/08-large.jpg' %}" title="Project description" rel="prettyPhoto">
+                <div class="hover-text">
+                  <h4>Project Title</h4>
+                  <small>Web Design</small> </div>
+                <img src="{{ image.image_08.url }}" class="img-responsive" alt="Project Title"> </a> </div>
+            </div>
           </div>
         </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 web">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="{% static 'img/portfolio/08-large.jpg' %}" title="Project description" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <small>Web Design</small> </div>
-              <img src="{% static 'img/portfolio/08-small.jpg' %}" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </div>
