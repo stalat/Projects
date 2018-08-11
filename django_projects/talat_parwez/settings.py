@@ -116,17 +116,16 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.11/howto/static-files/
-
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
+# ALL MEDIA-FILES WILL BE COPIED OVER HERE WHILE UPLOADING
 MEDIA_ROOT = os.path.join(BASE_DIR, 'talat_parwez/media')
 
-#STATIC_ROOT = '/home/talat/Talat/git_repos/django-site/talat_parwez/static/'
+# ALL FILES WILL BE COPIED OVER HERE FROM DIFFERENT APPS
+STATIC_ROOT = os.path.join(BASE_DIR, 'talat_parwez/static')
 
+# ALL FILES FROM THESE PATHS WILL BE COPIED TO STATIC ROOT
 STATICFILES_DIRS = (
-                       '/home/talat/Talat/git_repos/django-site/talat_parwez/sin_app/static/',
-                        )
+                       os.path.join(BASE_DIR, 'talat_parwez/sin_app/static'),
+                    )
