@@ -28,9 +28,3 @@ class Portfolio(models.Model):
     image_06 = models.ImageField(upload_to='portfolio_image', blank=True)
     image_07 = models.ImageField(upload_to='portfolio_image', blank=True)
     image_08 = models.ImageField(upload_to='portfolio_image', blank=True)
-
-    # def create_profile(sender, **kwargs):
-    #     if kwargs['created']:
-    #         user_profile = UserProfile.objects.create(user=kwargs['instance'])
-
-    # post_save.connect(create_profile, sender=User)
