@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load staticfiles %}
+{% load tag_library %}
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -271,63 +272,28 @@
     <div class="row">
       <div class="col-lg-12">
         <ul class="timeline">
-        <li>
-            <div class="timeline-image">
-              <h4>Aug 2016 <br>
-                - <br>
-                Present ...</h4>
-            </div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4>3pillar Global</h4>
-                <h4 class="subheading">Python Developer</h4>
+          {% for company in company_details %}
+            <li class={{company.id | to_int}}>
+              <div class="timeline-image">
+                <h4>
+                  {{ company.from_date }}<br>
+                  - <br>
+                  {{ company.to_date }}</h4>
               </div>
-              <div class="timeline-body">
-                <p>(Senior Software Engineer)</p>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4>{{ company.company_name }}</h4>
+                  <h4 class="subheading">Python Developer</h4>
+                </div>
+                <div class="timeline-body">
+                  <p>({{ company.designation }})</p>
+                </div>
+                <div class="timeline-body">
+                  <p>{{ company.profile }}</p>
+                </div>
               </div>
-              <div class="timeline-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diamcommodo nibh ante facilisis.</p>
-              </div>
-            </div>
           </li>
-          <li class="timeline-inverted">
-            <div class="timeline-image">
-              <h4>Mar 2015 <br>
-                - <br>
-                Apr 2016</h4>
-            </div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4>SSN Logistics (Delhivery)</h4>
-                <h4 class="subheading">Python Developer</h4>
-              </div>
-              <div class="timeline-body">
-                <p>(Associate Engineer)</p>
-              </div>
-              <div class="timeline-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diamcommodo nibh ante facilisis.</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="timeline-image">
-              <h4>Dec 2013 <br>
-                - <br>
-                Mar 2015 </h4>
-            </div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4>ZeOmega Infotech</h4>
-                <h4 class="subheading">Python developer</h4>
-              </div>
-              <div class="timeline-body">
-                <p>(Software Developer)</p>
-              </div>
-              <div class="timeline-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diamcommodo nibh ante facilisis.</p>
-              </div>
-            </div>
-          </li>
+          {% endfor %}
         </ul>
       </div>
     </div>
