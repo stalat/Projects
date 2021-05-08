@@ -1,0 +1,511 @@
+    1  /sbin/ifconfig 
+    2  uname -r
+    3  cd /stalat/
+    4  ls -ld /stalat/
+    5  su -
+    6  ls -ld /stalat/
+    7  mkdir ~/.sqldeveloper
+    8  cd  ~/.sqldeveloper
+    9  ls
+   10  vim jdk
+   11  sqldeveloper 
+   12  setup
+   13  vim /etc/hosts
+   14  pwd
+   15  cat /proc/cpuinfo 
+   16  free -m
+   17  df -h
+   18  pwd
+   19  cd 
+   20  ls
+   21  ls -lah
+   22  cd .ssh
+   23  ls
+   24  ls -lah
+   25  ssh-keygen -C "stalat@zeomega.com"
+   26  ls
+   27  git config --list
+   28  ls
+   29  cat id_rsa.pub 
+   30  cd 
+   31  gedit /etc/hosts &
+   32  cd /etc/hosts
+   33  gedit /etc/hosts &
+   34  vim /etc/hosts
+   35  ifconfig
+   36  /sbin/ifconfig
+   37  free -m
+   38  git config list
+   39  git config -list
+   40  git config --list
+   41  git config user.name "stalat"
+   42  ls
+   43  cd D*
+   44  ls
+   45  cd ..
+   46  cd D*
+   47  cd Talat_Sentinel
+   48  cd 
+   49  gedit /etc/hosts &
+   50  hostname
+   51  su
+   52  cd D*
+   53  ls
+   54  mkdir Talat_Sentinel
+   55  d Talat_Sentinel/
+   56  cd Talat_Sentinel/
+   57  ls
+   58  git init
+   59  git config user.name "stalat"
+   60  git config user.email "stalat@zeomega.com"
+   61  git config --list
+   62  mkdir BCBSMA_544
+   63  cd BCBSMA_544/
+   64  ls
+   65  git clone git@github.com:zeomega/jiva_buildout.git
+   66  ls
+   67  cd jiva_buildout/
+   68  git branch
+   69  git checkout -b rel_5.4.4 origin/rel_5.4.4
+   70  git branch
+   71  git branch -a
+   72  ls
+   73  mkdir src
+   74  cd src
+   75  git clone git@github.com:zeomega/jiva.sre.web.git
+   76  git clone git@github.com:zeomega/jivacore.ui.git
+   77  ls
+   78  git clone git@github.com:zeomega/bcbsma_jiva.git
+   79  ls
+   80  cd jiva.sre.web/
+   81  git branch
+   82  git checkout -b rel_0.1 origin/rel_0.1
+   83  cd ..
+   84  cd jivacore.ui/
+   85  git checkout Jiva_5.4.4 origin/Jiva_5.4.4
+   86  git checkout -b Jiva_5.4.4 origin/Jiva_5.4.4
+   87  git branch
+   88  cd ..
+   89  gedit linux_dev.cfg &
+   90  bin/buildout - c linux_dev.cfg
+   91  ./installpy26.sh -s
+   92  bin/buildout - c linux_dev.cfg
+   93  ls
+   94  ls 
+   95  ./installpy26.sh -s
+   96  bin/buildout - c linux_dev.cfg
+   97  nstall 'zlib-devel' package.
+   98  Install these packages: glib2-devel libxslt-devel libxml2-devel zlib-devel bzip2-devel openssl-devel 
+   99  Contact system admistrator to install it.
+  100  After installing the above packages, run this script again.
+  101  [stalat@dtl-stalat jiva_buildout]$ bin/buildout - c linux_dev.cfg
+  102  bash: bin/buildout: No such file or directory
+  103  [stalat@dtl-stalat jiva_buildout]$ nstall 'zlib-devel' package.
+  104  bash: nstall: command not found
+  105  [stalat@dtl-stalat jiva_buildout]$ 
+  106  Install these packages: glib2-devel libxslt-devel libxml2-devel zlib-devel bzip2-devel openssl-devel 
+  107  Contact system admistrator to install it.
+  108  After installing the above packages, run this script again.
+  109  [stalat@dtl-stalat jiva_buildout]$ bin/buildout - c linux_dev.cfg
+  110  bash: bin/buildout: No such file or directory
+  111  [stalat@dtl-stalat jiva_buildout]$ nstall 'zlib-devel' package.
+  112  bash: nstall: command not found
+  113  [stalat@dtl-stalat jiva_buildout]$ 
+  114  Install these packages: glib2-devel libxslt-devel libxml2-devel zlib-devel bzip2-devel openssl-devel 
+  115  Contact system admistrator to install it.
+  116  After installing the above packages, run this script again.
+  117  [stalat@dtl-stalat jiva_buildout]$ bin/buildout - c linux_dev.cfg
+  118  bash: bin/buildout: No such file or directory
+  119  [stalat@dtl-stalat jiva_buildout]$ nstall 'zlib-devel' package.
+  120  bash: nstall: command not found
+  121  [stalat@dtl-stalat jiva_buildout]$ 
+  122  Install these packages: glib2-devel libxslt-devel libxml2-devel zlib-devel bzip2-devel openssl-devel 
+  123  Contact system admistrator to install it.
+  124  After installing the above packages, run this script again.
+  125  [stalat@dtl-stalat jiva_buildout]$ bin/buildout - c linux_dev.cfg
+  126  bash: bin/buildout: No such file or directory
+  127  [stalat@dtl-stalat jiva_buildout]$ nstall 'zlib-devel' package.
+  128  bash: nstall: command not found
+  129  [stalat@dtl-stalat jiva_buildout]$ 
+  130  m
+  131  Install these packages: glib2-devel libxslt-devel libxml2-devel zlib-devel bzip2-devel openssl-devel 
+  132  Contact system admistrator to install it.
+  133  After installing the above packages, run this script again.
+  134  [stalat@dtl-stalat jiva_buildout]$ bin/buildout - c linux_dev.cfg
+  135  bash: bin/buildout: No such file or directory
+  136  [stalat@dtl-stalat jiva_buildout]$ nstall 'zlib-devel' package.
+  137  bash: nstall: command not found
+  138  [stalat@dtl-stalat jiva_buildout]$ 
+  139  .bin/buildout - c linux_dev.cfg
+  140  ./bin/buildout - c linux_dev.cfg
+  141  ./bin/buildout -c linux_dev.cfg
+  142  ls
+  143  pwd
+  144  ./bin/buildout -c linux_dev.cfg
+  145  cd
+  146  cd -
+  147  ls
+  148  ./bin/buildout -c linux_dev.cfg
+  149  bin/buildout - c linux_dev.cfg
+  150  bin/buildout -c linux_dev.cfg
+  151  .bin/buildout -c linux_dev.cfg
+  152  ./bin/buildout -c linux_dev.cfg
+  153  .bin/buildout -c linux_dev.cfg
+  154  ./bin/buildout -c linux_dev.cfg
+  155  ls
+  156  ./usr/bin/python2.6 zebootstrap.py
+  157  ./installpy26.sh -s
+  158  pwd
+  159  cd ..
+  160  cd
+  161  ls
+  162  cd Desktop/
+  163  ls
+  164  cd Talat_Sentinel/
+  165  ls
+  166  cd BCBSMA_544/
+  167  ls
+  168  cd jiva_buildout/
+  169  ls
+  170  ./installpy26.sh -s
+  171  python 
+  172  ./installpy26.sh -s
+  173  su
+  174  ./installpy26.sh -s
+  175  su
+  176  ./installpy26.sh -s
+  177  ./bin/buildout -c linux_dev.cfg
+  178  ./installpy26.sh -s
+  179  ./usr/bin/python2.6 zebootstrap.py
+  180  ./bin/buildout -c linux_dev.cfg
+  181  source ./bin/cxoracle_env.sh
+  182  bin/zeo_srv start
+  183  bin/zope_c1 fg
+  184  bin/zeo_srv stop
+  185  bin/zeo_srv start
+  186  bin/zope_c1 fg
+  187  bin/zeo_srv stop
+  188  ps aux | grep zope
+  189  source ./bin/cxoracle_env.sh
+  190  bin/zeo_srv start
+  191  bin/zeo_srv stop
+  192  bin/zeo_srv start
+  193  ps aux | grep zope
+  194  bin/zope_c1 fg
+  195  su
+  196  zeomega - su
+  197  su -
+  198  clear
+  199  pwd
+  200  cd Desktop/
+  201  ls
+  202  cd Talat_Sentinel/
+  203  ls
+  204  cd BCBSMA_544
+  205  ls
+  206  cd jiva_buildout/src/bcbsma_jiva/
+  207  ls
+  208  cd Products/
+  209  ls
+  210  cd BCBSMANotification/
+  211  ls
+  212  vim BCBSMANotificationCtrl.py
+  213  cd ../
+  214  ls
+  215  vim __init__.py
+  216  cd ../
+  217  ls
+  218  cd ../../\
+  219  cd ../../
+  220  cd eggs
+  221  cd jiva.install-0.1.12-py2.6.egg/
+  222  ls
+  223  cd Products/
+  224  ls
+  225  cd ZeJiva
+  226  ls
+  227  cd ../../../
+  228  cd ../src/bcbsma_jiva/Products/
+  229  ls
+  230  cd BCBSMAJiva/
+  231  ls
+  232  vim config.py
+  233  cd ..
+  234  ./bin/zeo_srv stop
+  235  ./bin/buildout -c linux_dev.cfg
+  236  ./bin/zeo_srv start
+  237  source bin/cxoracle_env.sh
+  238  ./bin/zope_c1 fg
+  239  vim README.rst 
+  240  ./bin/zeo_srv start
+  241  vim README.rst 
+  242  ./bin/zope_c1 fg
+  243  gedit README.rst &
+  244  ./bin/zope_c1 fg
+  245  source bin/cxoracle_env.sh
+  246  ./bin/zeo_srv stop
+  247  ./bin/zeo_srv start
+  248  ./bin/zope_c1 fg
+  249  ./bin/zeo_srv start
+  250  source bin/cxoracle_env.sh
+  251  ./bin/zeo_srv start
+  252  ./bin/zope_c1 fg
+  253  ./bin/zeo_srv stop
+  254  ./bin/zeo_srv start
+  255  source bin/cxoracle_env.sh
+  256  ./bin/zope_c1 fg
+  257  ./bin/zeo_srv stop
+  258  git branch
+  259  pwd
+  260  gedit linux_dev.cfg &
+  261  gedit README.rst  &
+  262  pwd
+  263  ./bin/buildout -c linux_dev.cfg
+  264  source ./bin/cxoracle_env.sh
+  265  bin/zeo_srv start
+  266  bin/zope_c1 fg
+  267  bin/zeo_srv stop
+  268  source ./bin/cxoracle_env.sh
+  269  bin/zeo_srv start
+  270  bin/zope_c1 fg
+  271  cd src/jivacore.ui/Products/
+  272  git branch -a
+  273  cd ..
+  274  cd jiva.sre.web/Products/
+  275  git branch -a 
+  276  cd ..
+  277  git branch -a
+  278  bin/zeo_srv stop
+  279  bin/zeo_srv start
+  280  bin/zope_c1 fg
+  281  bin/zeo_srv stop
+  282  ./bin/develop activate src/jivacore.ui/
+  283  ls
+  284  cd src
+  285  ls
+  286  ./bin/develop activate jivacore.ui
+  287  cd ..
+  288  ./bin/develop activate src/jivacore.ui
+  289  ./bin/develop activate src/jivacore.ui$
+  290  ./bin/develop activate jivacore.ui
+  291  ./bin/develop activate jiva.sre.web
+  292  cd src
+  293  ls
+  294  cd ..
+  295  ./bin/buildout -c linux_dev.cfg
+  296  cd eggs
+  297  ls
+  298  pwd
+  299  cd jiva.install-0.1.12-py2.6.egg
+  300  ls
+  301  cd EGG-INFO/
+  302  ls
+  303  cd jiva.app-5.4.3-py2.6.egg
+  304  cd ..
+  305  cd jiva.app-5.4.3-py2.6.egg
+  306  ls
+  307  cd EGG-INFO/
+  308  ls
+  309  gedit requires.txt &
+  310  cd ..
+  311  cd src
+  312  ls
+  313  cd jivacore.ui/
+  314  ls
+  315  git staus
+  316  git status
+  317  gedit CHANGES.txt &
+  318  cd ..
+  319  ./bin/buildout -c linux_dev.cfg
+  320  source ./bin/cxoracle_env.sh
+  321  bin/zeo_srv start
+  322  bin/zope_c1 fg
+  323  bin/zeo_srv stop
+  324  source ./bin/cxoracle_env.sh
+  325  bin/zeo_srv start
+  326  bin/zope_c1 fg
+  327  cd src
+  328  git clone git@github.com:zeomega/jivabase.ce.git
+  329  ./bin/develop activate jivabase.ce/
+  330  cd ..
+  331  ./bin/develop activate jivabase.ce/
+  332  ./bin/develop activate src/jivabase.ce/
+  333  cd src
+  334  ./bin/develop activate src/jivabase.ce/
+  335  bin/develop activate src/jivabase.ce/
+  336  ./bin/develop activate jivabase.ce
+  337  cd ..
+  338  cd src
+  339  ls
+  340  cd jivabase.ce/
+  341  ls
+  342  git branch
+  343  git branch -a
+  344  git branch
+  345  git checkout -b rel_0.2 origin/rel_0.2
+  346  git branch
+  347  cd ..
+  348  ./bin/develop activate jivabase.ce
+  349  ./bin/buildout -c linux_dev.cfg
+  350  ./bin/zeo_srv stop
+  351  ./bin/buildout -c linux_dev.cfg
+  352  source bin/cxoracle_env.sh
+  353  ./bin/zeo_srv start
+  354  ./bin/zope_c1 fg
+  355  ./bin/zeo_srv stop
+  356  ./bin/zeo_srv start
+  357  source bin/cxoracle_env.sh
+  358  ./bin/zope_c1 fg
+  359  ifconfig
+  360  /sbin ifconfig
+  361  ./sbin ifconfig
+  362  cd
+  363  ifconfig
+  364  /sbin ifconfig
+  365  ./sbin ifconfig
+  366  python 
+  367  cd D*
+  368  cd Talat_Sentinel/
+  369  ls
+  370  cd PyPractice/
+  371  touch profileModule.py
+  372  gedit profileModule.py &
+  373  python profileModule.py
+  374  cProfile.py profileModule.py
+  375  python 
+  376  python profileModule.py
+  377  import tabnanny
+  378  tabnanny.py -v profileModule.py
+  379  python 
+  380  rdesktop -g 1300x710 192.168.11.4
+  381  /sbin/ipconfig
+  382  /sbin/ifconfig
+  383  rdesktop -g 1300x710 192.168.11.4
+  384  cd ..
+  385  cd BCBSMA_544/
+  386  ls
+  387  cd jiva_buildout/src/bcbsma_jiva/
+  388  ls
+  389  cd Products/BCBSMAUI
+  390  git status
+  391  cd ../../
+  392  git checkout -- Products/BCBSMAJiva/config.py
+  393  git status
+  394  vim Products/BCBSMAJiva/config.py
+  395  cd ..
+  396  ./bin/zeo_srv stop
+  397  ./bin/buildout -c linux_dev.cfg
+  398  source bin/cxoracle_env.sh
+  399   ./bin/zeo_srv start
+  400  ./bin/zope_c1 fg
+  401  git branch
+  402  cd src
+  403  cd bcbsma_jiva/
+  404  git branch
+  405  git branch -a
+  406  cd ..
+  407  cd jivacore.ui/
+  408  git branch
+  409  cd ..
+  410  cd jiva.sre.web/
+  411  git branch
+  412  cd ..
+  413  cd bcbsma_jiva/
+  414  ls
+  415  cd Products/
+  416  ls
+  417  cd BCBSMAJiva/
+  418  ls
+  419  gedit config.py &
+  420  cd ..
+  421  cd jivacore.ui/
+  422  ls
+  423  cd Products/ZeUI/views
+  424  gedit index_html.dtml &
+  425  ping https.//www.google.com
+  426  ping https://www.google.com
+  427  ping https://www.google.com/
+  428  ping http://www.google.com
+  429  ping www.google.com
+  430  pwd
+  431  python 
+  432  ./bin/zeo_srv start
+  433  source bin/cxoracle_env.sh
+  434  ./bin/zope_c1 fg
+  435  zip
+  436  ls
+  437  tree Downloads
+  438  du Downloads/
+  439  zip Downloads/ down.zip
+  440  zip --help #Downloads/ down.zip
+  441  zip -r Downloads/ down.zip
+  442  zip -re Downloads/ down.zip
+  443  find ~ -name "*.zip"
+  444  cp /home/stalat/Desktop/Talat_Sentinel/BCBSMA_544/jiva_buildout/usr/lib/python2.6/test/zipdir.zip .
+  445  ls
+  446  zip zipdir.zip 
+  447  zip -r zipdir.zip 
+  448  cp /home/stalat/Desktop/Sublime Text 2/lib/python26.zip
+  449  cp /home/stalat/Desktop/Sublime Text 2/lib/python26.zip .
+  450  cp /home/stalat/Desktop/Sublime\ Text\ 2/lib/python26.zip .
+  451  ls
+  452  zip python26.zip 
+  453  zip -U python26.zip 
+  454  zip --help
+  455  unzip python26.zip 
+  456  ls
+  457  pwd
+  458  ls -lrt
+  459  rm -f *.pyo
+  460  ls
+  461  zip msilib
+  462  ls
+  463  man zip
+  464  zip -r msilib.zip msilib/
+  465  ls
+  466  du msilib
+  467  du msilib.zip 
+  468  zip -r9 msilib.zip msilib/
+  469  ls
+  470  du msilib.zip 
+  471  ls
+  472  ls ".*"
+  473  git init
+  474  git remote add dotfile https://github.com/SivaCn/Dot-Files.git
+  475  git remote -v
+  476  git fetch dotfile
+  477  git rebase dotfile/master
+  478  source .bashrc 
+  479  cat .gitignore | awk -F'!' '{print $2}' | uniq
+  480  cat > .gitignore
+  481  cat .gitignore | awk -F'!' '{print $2}' | uniq
+  482  cat .gitignore | awk -F'!' '{print $2}' | uniq | xargs -n 1 
+  483  cat .gitignore | awk -F'!' '{print $2}' | uniq | xargs -n 1 rm -vrf
+  484  git fetch origin
+  485  git fetch dotfile
+  486  git rebase dotfile/master
+  487  git checkout -b local dotfile/master
+  488  source .bashrc 
+  489  l
+  490  pwd
+  491* 
+  492  vim .bashrc 
+  493  source .bashrc 
+  494  ls
+  495  cd Desktop/
+  496  ls
+  497  cd Talat_Sentinel/BCBSMA_544/jiva_buildout/
+  498  ls
+  499  cd src/jiva.sre.web/
+  500  python 
+  501  cd ..
+  502  cd PyPractice/
+  503  ls
+  504  touch bestHistory.txt
+  505  history
+  506  history--> bestHistory.txt 
+  507  ls
+  508  gedit bestHistory.txt &
+  509  history> bestHistory.txt 
+  510  gedit bestHistory.txt &
+  511  history>> bestHistory.txt 
