@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.contrib import admin
-from models import UserProfile, Portfolio, CompanyProfile
+from sin_app.models import UserProfile, Portfolio, CompanyProfile
 
 
 # Register your models here.

@@ -1,5 +1,5 @@
 from django.conf.urls import url, include
-from views import Home, DownloadResume
+from sin_app.views import Home, DownloadResume
 
 
 app_name = 'sin_app'

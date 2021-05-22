@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 # Quick-start development settings - unsuitable for production
@@ -37,10 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'sin_app.apps.SinAppConfig'
+    # 'sin_app.apps.SinAppConfig'
+    'sin_app'
 ]
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -74,15 +75,23 @@ WSGI_APPLICATION = 'wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+#DATABASES = {
+#            'default': {
+#            'ENGINE': 'django.db.backends.mysql',
+#            'NAME': 'talat_parwez',
+#            'USER': 'root',
+#            'PASSWORD': 'UbUroot1',
+#            'HOST': 'localhost',
+#            'PORT': '3306',                                                                                                          }
+#            }
+
+
 DATABASES = {
-            'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'talat_parwez',
-            'USER': 'root',
-            'PASSWORD': 'UbUroot1',
-            'HOST': 'localhost',
-            'PORT': '3306',                                                                                                          }
-            }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -129,3 +138,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'talat_parwez/static')
 STATICFILES_DIRS = (
                        os.path.join(BASE_DIR, 'talat_parwez/sin_app/static'),
                     )
+
+DEFAULT_AUTO_FIELD='django.db.models.AutoField' 

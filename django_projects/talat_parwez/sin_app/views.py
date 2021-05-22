@@ -7,7 +7,7 @@ from wsgiref.util import FileWrapper
 import mimetypes
 from django.conf import settings
 from django.http import HttpResponse
-from models import Portfolio, UserProfile, CompanyProfile
+from sin_app.models import Portfolio, UserProfile, CompanyProfile
 from django.views.generic import TemplateView, FormView
 
 # Create your views here.
@@ -16,14 +16,14 @@ class Home(TemplateView):
     template_name = 'index.html'
 
     def get(self, request):
-    	images = Portfolio.objects.all()
-    	company_details = CompanyProfile.objects.filter(user=1)[::-1]
+        images = Portfolio.objects.all()
+        company_details = CompanyProfile.objects.filter(user=1)[::-1]
         user_profile = UserProfile.objects.all()[0]
         response_generated = {
-        						'company_details': company_details,
-        						'portfolio': images,
-        						'user': user_profile
-        					}
+                                'company_details': company_details,
+                                'portfolio': images,
+                                'user': user_profile
+                            }
 
         return render(request, self.template_name, response_generated)
 

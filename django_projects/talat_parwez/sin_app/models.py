@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class UserProfile(models.Model):
-    user = models.OneToOneField(User)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     description = models.TextField(default='')
     company = models.CharField(max_length=100, blank=False)
     city = models.CharField(max_length=100, default='')
@@ -20,7 +20,7 @@ class UserProfile(models.Model):
         return self.user.username
 
 
-class Portfolio(models.Model):    
+class Portfolio(models.Model):
     image_01 = models.ImageField(upload_to='portfolio_image', blank=True)
     image_02 = models.ImageField(upload_to='portfolio_image', blank=True)
     image_03 = models.ImageField(upload_to='portfolio_image', blank=True)
@@ -32,7 +32,7 @@ class Portfolio(models.Model):
 
 
 class CompanyProfile(models.Model):
-    user = models.ForeignKey(UserProfile)
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     company_name = models.CharField(max_length=100)
     company_description = models.TextField(default='')
     designation = models.CharField(max_length=200)
