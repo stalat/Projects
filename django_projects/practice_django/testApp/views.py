@@ -8,3 +8,6 @@ from django.http import HttpResponse
 def welcome(request):
 	s = "<h1>Welcome to Django classes. {0}</h1>".format(str(datetime.datetime.now()))
 	return HttpResponse(s)
+
+def tempView(request):
+	return render(request, 'testApp/wish.html')
