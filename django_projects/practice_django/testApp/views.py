@@ -10,4 +10,6 @@ def welcome(request):
 	return HttpResponse(s)
 
 def tempView(request):
-	return render(request, 'testApp/wish.html')
+	date = str(datetime.datetime.now())
+	my_dict = {'my_date': date, 'name': "Talat Parwez"}
+	return render(request, 'testApp/wish.html', context=my_dict)
