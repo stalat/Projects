@@ -12,6 +12,7 @@
 	<h1>Portal for Student Registration</h1>
 	<form method="POST">
 		{{ form.as_p }}
+		{% csrf_token %}
 	<input type="submit" value="Register">
 	</form>
 </body>
