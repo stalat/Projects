@@ -6,4 +6,5 @@ urlpatterns = [
 	url(r'^tempView',  views.tempView),
 	url(r'^staticView',  views.staticView),
 	url(r'^studentList',  views.studentList),
+	url(r'^registration',  views.studentRegistration),
 	]
