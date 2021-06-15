@@ -1,6 +1,9 @@
 # python level imports
 import datetime
 
+# application level imports
+from testApp.models import Student
+
 # django level imports
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -16,3 +19,8 @@ def tempView(request):
 
 def staticView(request):
 	return render(request, 'testApp/static_content.html')
+
+def studentList(request):
+	student_list = Student.objects.all()
+	context_dict = {'students': student_list}
+	return render(request, 'testApp/student_data.html', context_dict)

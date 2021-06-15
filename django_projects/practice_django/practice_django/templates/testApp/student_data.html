@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/demo.css'  %}">
+
+
+<html lang="en", dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	{% if students %}
+	<h1>This will list out all the student details</h1>
+	<table>
+		<th>Student Name</th>
+		<th>Student Marks</th>
+	{% for st in students %}
+		<tr>
+			<td>{{ st.name }}</td>
+			<td>{{ st.marks }}</td>
+		</tr>
+	{% endfor %}
+</table>
+	{% else %}
+	<h1>There are no students enrolled</h1>
+	{% endif %}
+</body>
+</html>
