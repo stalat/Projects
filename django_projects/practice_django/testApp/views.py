@@ -13,3 +13,6 @@ def tempView(request):
 	date = str(datetime.datetime.now())
 	my_dict = {'my_date': date, 'name': "Talat Parwez"}
 	return render(request, 'testApp/wish.html', context=my_dict)
+
+def staticView(request):
+	return render(request, 'testApp/static_content.html')
