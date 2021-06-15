@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/demo.css'  %}">
+
+
+<html lang="en", dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<h1>Portal for Student Feedback</h1>
+	<form method="POST">
+		{{ form.as_p }}
+		{% csrf_token %}
+	<input type="submit" value="Register">
+	</form>
+</body>
+</html>

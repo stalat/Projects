@@ -3,7 +3,7 @@ import datetime
 
 # application level imports
 from testApp.models import Student
-from testApp.forms import StudentRegistrationForm
+from testApp.forms import StudentRegistrationForm, StudentFeedbackForm
 # django level imports
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -27,4 +27,8 @@ def studentList(request):
 
 def studentRegistration(request):
 	form = StudentRegistrationForm()
+	return render(request, 'testApp/student_registration.html', {'form': form})
+
+def studentFeedback(request):
+	form = StudentFeedbackForm()
 	return render(request, 'testApp/student_registration.html', {'form': form})
