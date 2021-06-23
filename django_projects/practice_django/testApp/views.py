@@ -31,4 +31,9 @@ def studentRegistration(request):
 
 def studentFeedback(request):
 	form = StudentFeedbackForm()
-	return render(request, 'testApp/student_registration.html', {'form': form})
+	if request.method == "POST":
+		form = StudentFeedbackForm(request.POST)
+		if form.is_valid():
+			print("Form validation success, printing feedback information")
+			print(form.cleaned_data)
+	return render(request, 'testApp/student_feedback.html', {'form': form})
