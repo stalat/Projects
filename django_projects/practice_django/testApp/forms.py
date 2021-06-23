@@ -10,3 +10,8 @@ class StudentFeedbackForm(forms.Form):
 	email = forms.EmailField()
 	feedback = forms.CharField(widget=forms.Textarea)
 	
+	def clean_name(self):
+		inputname = self.cleaned_data['name']
+		if len(inputname) < 4:
+			raise forms.ValidationError('Name should atleast be 4 characters')
+		return inputname
