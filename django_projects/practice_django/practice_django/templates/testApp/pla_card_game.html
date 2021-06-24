@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/demo.css'  %}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<html lang="en", dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+<style>
+#myDIV {
+  width: 20%;
+  padding: 20px 0;
+  text-align: center;
+  background-color: red;
+  margin-top: 20px;
+  color: white;
+}
+</style>
+</head>
+<body>
+<!-- <button onclick="myFunction()">Try it</button> -->
+<div id="myDIV" onclick="myFunction()">
+Click to reveal the mood.
+</div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+  	x.textContent = "yellow";
+    x.style.backgroundColor = "green";
+    x.style.color = "white";
+  }
+}
+</script>
+</body>
+</html>

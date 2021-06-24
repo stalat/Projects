@@ -8,4 +8,6 @@ urlpatterns = [
 	url(r'^studentList',  views.studentList),
 	url(r'^registration',  views.studentRegistration),
 	url(r'^feedback',  views.studentFeedback),
+	url(r'^game_rules',  views.gameRules),
+	url(r'^placard',  views.playGame),
 	]

@@ -8,9 +8,18 @@ from testApp.forms import StudentRegistrationForm, StudentFeedbackForm
 from django.shortcuts import render
 from django.http import HttpResponse
 
+# def welcome(request):
+# 	s = "<h1>Welcome to Django classes. {0}</h1>".format(str(datetime.datetime.now()))
+# 	return HttpResponse(s)
+
 def welcome(request):
-	s = "<h1>Welcome to Django classes. {0}</h1>".format(str(datetime.datetime.now()))
-	return HttpResponse(s)
+	return render(request, 'testApp/mono_wish.html')
+
+def gameRules(request):
+	return render(request, 'testApp/game_rules.html')
+
+def playGame(request):
+	return render(request, 'testApp/pla_card_game.html')
 
 def tempView(request):
 	date = str(datetime.datetime.now())
