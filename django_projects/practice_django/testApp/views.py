@@ -19,7 +19,8 @@ def gameRules(request):
 	return render(request, 'testApp/game_rules.html')
 
 def playGame(request):
-	return render(request, 'testApp/pla_card_game.html')
+	my_dict = {'keys': [i for i in range(15)]}
+	return render(request, 'testApp/pla_card_game.html', context=my_dict)
 
 def tempView(request):
 	date = str(datetime.datetime.now())

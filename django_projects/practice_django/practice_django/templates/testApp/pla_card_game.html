@@ -8,31 +8,34 @@
 	<meta charset="utf-8">
 	<title></title>
 <style>
-.mono {
+.col-md-2 {
   width: 20%;
   padding: 20px 0;
   text-align: center;
   background-color: red;
   margin-top: 20px;
   color: white;
+  border-right: 20px solid; #333;
 }
 </style>
 </head>
 <body>
-<!-- <button onclick="myFunction()">Try it</button> -->
-{% for i in "12345" %}
-    <div class='mono' id='container{{i}}' onclick="myFunction(this)">
+	<div class="row">
+{% for i in keys %}
+    <div class="col-md-2" border = "thick solid #0000FF" id='container{{i}}' onclick="myFunction(this)">
     PlaCard No: {{i}}
 	</div>
 {% endfor %}
+</div>
 
 <script>
+	var mood_list = ["surprised", "shocked", "sad", "Having a crush on someone", "admiring someone", "inspired from someone", "High", "excited", "bored", "fearful", "angry", "annoyed", "scared", "depressed", "emotional"]
 function myFunction(ss) {
   var x = document.getElementById(ss.id);
   if (x.style.display === "none") {
     x.style.display = "block";
   } else {
-  	x.textContent = "yellow";
+  	x.textContent = mood_list[Math.floor(Math.random() * mood_list.length)];;
     x.style.backgroundColor = "green";
     x.style.color = "white";
   }
