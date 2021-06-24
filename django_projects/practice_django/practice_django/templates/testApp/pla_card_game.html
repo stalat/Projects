@@ -8,7 +8,7 @@
 	<meta charset="utf-8">
 	<title></title>
 <style>
-#myDIV {
+.mono {
   width: 20%;
   padding: 20px 0;
   text-align: center;
@@ -20,13 +20,15 @@
 </head>
 <body>
 <!-- <button onclick="myFunction()">Try it</button> -->
-<div id="myDIV" onclick="myFunction()">
-Click to reveal the mood.
-</div>
+{% for i in "12345" %}
+    <div class='mono' id='container{{i}}' onclick="myFunction(this)">
+    PlaCard No: {{i}}
+	</div>
+{% endfor %}
 
 <script>
-function myFunction() {
-  var x = document.getElementById("myDIV");
+function myFunction(ss) {
+  var x = document.getElementById(ss.id);
   if (x.style.display === "none") {
     x.style.display = "block";
   } else {
