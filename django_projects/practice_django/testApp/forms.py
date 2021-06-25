@@ -14,6 +14,8 @@ class StudentFeedbackForm(forms.Form):
 	name = forms.CharField()
 	rollno = forms.IntegerField()
 	email = forms.EmailField()
+	password  = forms.CharField(widget=forms.PasswordInput)
+	rpassword = forms.CharField(widget=forms.PasswordInput)
 	feedback = forms.CharField(widget=forms.Textarea, validators=[validators.MaxLengthValidator(40), 
 		validators.MinLengthValidator(10)])
 	
@@ -24,9 +26,7 @@ class StudentFeedbackForm(forms.Form):
 	# 	return inputname
 
 	def clean(self):
-		print("Validating whole form")
 		cleaned_data = super(StudentFeedbackForm, self).clean()
-		print(cleaned_data)
 		inputname = cleaned_data['name']
 		if len(inputname) < 4:
 			raise forms.ValidationError('Name should atleast be 4 characters')
@@ -34,5 +34,10 @@ class StudentFeedbackForm(forms.Form):
 		inputfeedback = cleaned_data['feedback']
 		if 'feedback' not in inputfeedback:
 			raise forms.ValidationError('Feedback keyword is expected')
+
+		inputpwd = cleaned_data['password']
+		inputrpwd = cleaned_data['rpassword']
+		if inputpwd != inputrpwd:
+			raise forms.ValidationError('Passwords does not match!')
 
 		return cleaned_data
