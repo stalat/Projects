@@ -13,9 +13,9 @@ class StudentFeedbackForm(forms.Form):
 	# name = forms.CharField(validators=[starts_with_t])
 	name = forms.CharField()
 	rollno = forms.IntegerField()
-	email = forms.EmailField()
-	password  = forms.CharField(widget=forms.PasswordInput)
-	rpassword = forms.CharField(widget=forms.PasswordInput)
+	email = forms.EmailField(label='Email Account')
+	password  = forms.CharField(label='Password', widget=forms.PasswordInput)
+	rpassword = forms.CharField(label='Password (again)', widget=forms.PasswordInput)
 	feedback = forms.CharField(widget=forms.Textarea, validators=[validators.MaxLengthValidator(40), 
 		validators.MinLengthValidator(10)])
 	
