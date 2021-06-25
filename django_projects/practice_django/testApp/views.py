@@ -3,7 +3,7 @@ import datetime
 
 # application level imports
 from testApp.models import Student
-from testApp.forms import StudentRegistrationForm, StudentFeedbackForm
+from testApp.forms import StudentRegistrationForm, StudentFeedbackForm, StudentForm
 # django level imports
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -53,3 +53,10 @@ def studentFeedback(request):
 			return thankyou_view(request)
 	return render(request, 'testApp/student_feedback.html', {'form': form})
 	
+def student_view(request):
+	form = StudentForm()
+	if request.method == "POST":
+		form = StudentForm(request.POST)
+		if form.is_valid():
+			form.save(commit=True)
+	return render(request, 'testApp/register.html', {'form': form})

@@ -1,13 +1,15 @@
 from django import forms
 from django.core import validators
+from testApp.models import Student
 
-class StudentRegistrationForm(forms.Form):
-	name = forms.CharField()
-	marks = forms.IntegerField()
 
 def starts_with_t(value):
     if value[0] != 't':
         raise forms.ValidationError('Name should start with t')
+
+class StudentRegistrationForm(forms.Form):
+	name = forms.CharField()
+	marks = forms.IntegerField()
 
 class StudentFeedbackForm(forms.Form):
 	# name = forms.CharField(validators=[starts_with_t])
@@ -28,7 +30,6 @@ class StudentFeedbackForm(forms.Form):
 
 	def clean(self):
 		cleaned_data = super(StudentFeedbackForm, self).clean()
-		import pdb;pdb.set_trace()
 		inputbot = cleaned_data['bot_handler']
 		if len(inputbot) > 0:
 			raise forms.ValidationError('Bot send this request')
@@ -46,3 +47,8 @@ class StudentFeedbackForm(forms.Form):
 			raise forms.ValidationError('Passwords does not match!')
 
 		return cleaned_data
+
+class StudentForm(forms.ModelForm):
+	class Meta:
+		model = Student
+		fields = '__all__'
