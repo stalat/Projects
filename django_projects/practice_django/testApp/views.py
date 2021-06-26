@@ -2,8 +2,8 @@
 import datetime
 
 # application level imports
-from testApp.models import Student
-from testApp.forms import StudentRegistrationForm, StudentFeedbackForm, StudentForm
+from testApp.models import Student, Movie
+from testApp.forms import StudentRegistrationForm, StudentFeedbackForm, StudentForm,  MovieForm
 # django level imports
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -60,3 +60,20 @@ def student_view(request):
 		if form.is_valid():
 			form.save(commit=True)
 	return render(request, 'testApp/register.html', {'form': form})
+
+def movie_index(request):
+	return render(request, 'testApp/movie_index.html')
+
+def movie_add(request):
+	form = MovieForm()
+	if request.method == "POST":
+		form = MovieForm(request.POST)
+		if form.is_valid():
+			form.save(commit=True)
+		return movie_index(request)
+	return render(request, 'testApp/movie_add.html', {'form': form})
+
+def movie_list(request):
+	movies_list = Movie.objects.all()
+	context_dict = {'movies': movies_list}
+	return render(request, 'testApp/movies_list.html', context_dict)

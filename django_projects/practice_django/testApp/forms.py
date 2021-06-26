@@ -1,6 +1,6 @@
 from django import forms
 from django.core import validators
-from testApp.models import Student
+from testApp.models import Student, Movie
 
 
 def starts_with_t(value):
@@ -51,4 +51,9 @@ class StudentFeedbackForm(forms.Form):
 class StudentForm(forms.ModelForm):
 	class Meta:
 		model = Student
+		fields = '__all__'
+
+class MovieForm(forms.ModelForm):
+	class Meta:
+		model = Movie
 		fields = '__all__'
