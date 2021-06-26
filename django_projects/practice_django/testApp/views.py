@@ -62,7 +62,8 @@ def student_view(request):
 	return render(request, 'testApp/register.html', {'form': form})
 
 def movie_index(request):
-	return render(request, 'testApp/movie_index.html')
+	movies_count = Movie.objects.count()
+	return render(request, 'testApp/movie_index.html', {'movie_count': movies_count})
 
 def movie_add(request):
 	form = MovieForm()
