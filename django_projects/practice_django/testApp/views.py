@@ -90,3 +90,10 @@ def sports_news(request):
 
 def politics_news(request):
 	return render(request, 'testApp/news_portal/politics_news.html')
+
+def count_view(request):
+	count = int(request.COOKIES.get('count', 0))
+	updated_count = count + 1
+	response = render(request, 'testApp/session_manage/count_view.html', context={'count': updated_count})
+	response.set_cookie('count', updated_count)
+	return response
