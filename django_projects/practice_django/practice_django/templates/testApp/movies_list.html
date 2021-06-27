@@ -23,8 +23,8 @@
 			{% for movie in movies %}
 			  <tr>
 				<td>{{ movie.rdate }}</td>
-				<td>{{ movie.moviename|truncate5 }}</td>
-				<td>{{ movie.actor }}</td>
+				<td>{{ movie.moviename| truncate5 }}</td>
+				<td>{{ movie.actor | truncateN:10 }}</td>
 				<td>{{ movie.actress }}</td>
 				<td>{{ movie.rating }}</td>
 			  </tr>
