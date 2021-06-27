@@ -97,3 +97,25 @@ def count_view(request):
 	response = render(request, 'testApp/session_manage/count_view.html', context={'count': updated_count})
 	response.set_cookie('count', updated_count, max_age=100)
 	return response
+
+def save_name(request):
+	return render(request, 'testApp/session_manage/save_name.html')
+
+def save_age(request):
+	name = request.GET['name']
+	response = render(request, 'testApp/session_manage/save_age.html')
+	response.set_cookie('name', name)
+	return response
+
+def save_qualification(request):
+	age = request.GET['age']
+	response = render(request, 'testApp/session_manage/save_qualification.html')
+	response.set_cookie('age', age)
+	return response
+
+def display_results(request):
+	name = request.COOKIES.get('name')
+	age = request.COOKIES.get('age')
+	qualification = request.GET['qualification']
+	context_dict = {'name': name, 'age': age, 'qualification': qualification}
+	return render(request, 'testApp/session_manage/display_results.html', context=context_dict)
