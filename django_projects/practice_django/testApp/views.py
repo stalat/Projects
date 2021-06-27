@@ -95,5 +95,5 @@ def count_view(request):
 	count = int(request.COOKIES.get('count', 0))
 	updated_count = count + 1
 	response = render(request, 'testApp/session_manage/count_view.html', context={'count': updated_count})
-	response.set_cookie('count', updated_count)
+	response.set_cookie('count', updated_count, max_age=100)
 	return response
