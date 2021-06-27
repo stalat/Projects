@@ -78,3 +78,15 @@ def movie_list(request):
 	movies_list = Movie.objects.all()
 	context_dict = {'movies': movies_list}
 	return render(request, 'testApp/movies_list.html', context_dict)
+
+def home_news(request):
+	return render(request, 'testApp/news_portal/home_news.html')
+	
+def movie_news(request):
+	return render(request, 'testApp/news_portal/movie_news.html')
+
+def sports_news(request):
+	return render(request, 'testApp/news_portal/sport_news.html')
+
+def politics_news(request):
+	return render(request, 'testApp/news_portal/politics_news.html')
