@@ -26,6 +26,8 @@ urlpatterns = [
 	url(r'^display_results',  views.display_results),
 	url(r'^results_session_form',  views.ResultView),
 	url(r'^movie_list',  views.movie_list),
+	url(r'^movie_delete/(?P<id>\d+)/$',  views.movie_delete),
+	url(r'^movie_update/(?P<id>\d+)/$',  views.movie_update),
 	url(r'^game_rules',  views.gameRules),
 	url(r'^placard',  views.playGame),
 	url(r'^add_item',  views.add_item_view),

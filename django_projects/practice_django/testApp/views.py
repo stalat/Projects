@@ -6,7 +6,7 @@ from testApp.models import Student, Movie
 from testApp.forms import StudentRegistrationForm, StudentFeedbackForm, StudentForm, \
 MovieForm, NameForm, AgeForm, QualificationForm, AddItemForm, SignUpForm
 # django level imports
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse,  HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 
@@ -80,6 +80,20 @@ def movie_list(request):
 	movies_list = Movie.objects.all()
 	context_dict = {'movies': movies_list}
 	return render(request, 'testApp/movies_list.html', context_dict)
+
+def movie_delete(request, id):
+	movie = Movie.objects.get(id=id)
+	movie.delete()
+	return redirect('/movie_list')
+
+def movie_update(request, id):
+	movie = Movie.objects.get(id=id)
+	if request.method=="POST":
+		form = MovieForm(request.POST, instance=movie)
+		if form.is_valid():
+			form.save(commit=True)
+		return redirect('/movie_list')
+	return render(request, 'testApp/movie_update.html', {'movie': movie})
 
 def home_news(request):
 	return render(request, 'testApp/news_portal/home_news.html')

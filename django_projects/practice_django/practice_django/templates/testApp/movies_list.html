@@ -19,6 +19,7 @@
 			<th scope="col">Actor</th>
 			<th scope="col">Actress</th>
 			<th scope="col">Rating</th>
+			<th scope="col">Action</th>
 		</thead>
 			{% for movie in movies %}
 			  <tr>
@@ -27,6 +28,10 @@
 				<td>{{ movie.actor | truncateN:10 }}</td>
 				<td>{{ movie.actress }}</td>
 				<td>{{ movie.rating }}</td>
+				<td>
+					<a href="/movie_update/{{ movie.id }}">Update</a>
+					<a href="/movie_delete/{{ movie.id }}">Delete</a>
+				</td>
 			  </tr>
 			{% endfor %}
 	</table>
