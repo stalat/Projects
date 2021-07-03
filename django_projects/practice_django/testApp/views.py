@@ -156,7 +156,7 @@ def add_item_view(request):
 	if request.method == "POST":
 		name = request.POST['name']
 		quantity = request.POST['quantity']
-		request.session['name'] = quantity
+		request.session[name] = quantity
 	return render(request, 'testApp/session_manage/session_additem.html', {'form': form})
 
 def display_added_items(request):
