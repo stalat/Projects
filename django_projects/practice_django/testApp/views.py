@@ -8,6 +8,7 @@ MovieForm, NameForm, AgeForm, QualificationForm, AddItemForm
 # django level imports
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 
 # def welcome(request):
 # 	s = "<h1>Welcome to Django classes. {0}</h1>".format(str(datetime.datetime.now()))
@@ -165,11 +166,14 @@ def display_added_items(request):
 def authenticated_exam_portal(request):
 	return render(request, 'testApp/auth_templates/home.html')
 
+@login_required
 def java_exams_view(request):
 	return render(request, 'testApp/auth_templates/javaexams.html')
 
+@login_required
 def python_exams_view(request):
 	return render(request, 'testApp/auth_templates/pythonexams.html')
 
+@login_required
 def aptitude_exams_view(request):
 	return render(request, 'testApp/auth_templates/aptitudeexams.html')
