@@ -16,6 +16,7 @@ urlpatterns = [
 	url(r'^sports_news',  views.sports_news),
 	url(r'^politics_news',  views.politics_news),
 	url(r'^count_view',  views.count_view),
+	url(r'^page_count_view',  views.page_count_view),
 	url(r'^save_name',  views.save_name),
 	url(r'^save_age',  views.save_age),
 	url(r'^save_qualification',  views.save_qualification),

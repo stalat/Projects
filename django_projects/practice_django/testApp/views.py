@@ -98,6 +98,15 @@ def count_view(request):
 	response.set_cookie('count', updated_count, max_age=100)
 	return response
 
+def page_count_view(request):
+    count = request.session.get('count', 0)
+    updated_count = count + 1
+    print(request.session.get_expiry_age())
+    print(request.session.get_expiry_date())
+    response = render(request, 'testApp/session_manage/count_view.html', context={'count': updated_count})
+    request.session['count'] = updated_count
+    return response
+
 def save_name(request):
 	return render(request, 'testApp/session_manage/save_name.html')
 
