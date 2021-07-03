@@ -57,3 +57,12 @@ class MovieForm(forms.ModelForm):
 	class Meta:
 		model = Movie
 		fields = '__all__'
+
+class NameForm(forms.Form):
+	name = forms.CharField()
+
+class AgeForm(forms.Form):
+	age = forms.IntegerField()
+
+class QualificationForm(forms.Form):
+	qualification = forms.CharField()

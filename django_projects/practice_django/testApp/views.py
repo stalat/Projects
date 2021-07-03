@@ -3,7 +3,8 @@ import datetime
 
 # application level imports
 from testApp.models import Student, Movie
-from testApp.forms import StudentRegistrationForm, StudentFeedbackForm, StudentForm,  MovieForm
+from testApp.forms import StudentRegistrationForm, StudentFeedbackForm, StudentForm, \
+MovieForm, NameForm, AgeForm, QualificationForm
 # django level imports
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -128,3 +129,24 @@ def display_results(request):
 	qualification = request.GET['qualification']
 	context_dict = {'name': name, 'age': age, 'qualification': qualification}
 	return render(request, 'testApp/session_manage/display_results.html', context=context_dict)
+
+def NameView(request):
+	form = NameForm()
+	return render(request, 'testApp/session_manage/save_name_form.html', {'form': form})
+
+def AgeView(request):
+	name = request.GET['name']
+	request.session['name'] = name
+	form = AgeForm()
+	return render(request, 'testApp/session_manage/save_age_form.html', {'form': form})
+
+def QualificationView(request):
+	age = request.GET['age']
+	request.session['age'] = age
+	form = QualificationForm()
+	return render(request, 'testApp/session_manage/save_qualification_form.html', {'form': form})
+
+def ResultView(request):
+	qualification = request.GET['qualification']
+	request.session['qualification'] = qualification
+	return render(request, 'testApp/session_manage/session_form_result.html')
