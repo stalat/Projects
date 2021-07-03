@@ -30,4 +30,8 @@ urlpatterns = [
 	url(r'^placard',  views.playGame),
 	url(r'^add_item',  views.add_item_view),
 	url(r'^display_added_items',  views.display_added_items),
+	url(r'^exam_portal_home',  views.authenticated_exam_portal),
+	url(r'^java_exams',  views.java_exams_view),
+	url(r'^python_exams',  views.python_exams_view),
+	url(r'^aptitude_exams',  views.aptitude_exams_view),
 	]

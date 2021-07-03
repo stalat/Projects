@@ -161,3 +161,15 @@ def add_item_view(request):
 
 def display_added_items(request):
 	return render(request, 'testApp/session_manage/display_additem.html')
+
+def authenticated_exam_portal(request):
+	return render(request, 'testApp/auth_templates/home.html')
+
+def java_exams_view(request):
+	return render(request, 'testApp/auth_templates/javaexams.html')
+
+def python_exams_view(request):
+	return render(request, 'testApp/auth_templates/pythonexams.html')
+
+def aptitude_exams_view(request):
+	return render(request, 'testApp/auth_templates/aptitudeexams.html')
