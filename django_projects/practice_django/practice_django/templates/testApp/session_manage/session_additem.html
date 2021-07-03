@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+{% extends 'testApp/session_manage/base.html' %}
+{% block body_block %}
+	<h1>Add Item Form</h1>
+	<form method="POST">
+		{{ form.as_p }}
+		{% csrf_token %}
+		<input type="submit" class="btn btn-primary btn-large" name="" value="Add Item">
+	</form><br><br>
+	<a class="btn btn-primary btn-large" href="/display_added_items" role="button">Display Items</a>
+{% endblock %}

@@ -28,4 +28,6 @@ urlpatterns = [
 	url(r'^movie_list',  views.movie_list),
 	url(r'^game_rules',  views.gameRules),
 	url(r'^placard',  views.playGame),
+	url(r'^add_item',  views.add_item_view),
+	url(r'^display_added_items',  views.display_added_items),
 	]

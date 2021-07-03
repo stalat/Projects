@@ -66,3 +66,7 @@ class AgeForm(forms.Form):
 
 class QualificationForm(forms.Form):
 	qualification = forms.CharField()
+
+class AddItemForm(forms.Form):
+	name = forms.CharField()
+	quantity = forms.IntegerField()

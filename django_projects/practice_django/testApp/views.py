@@ -4,7 +4,7 @@ import datetime
 # application level imports
 from testApp.models import Student, Movie
 from testApp.forms import StudentRegistrationForm, StudentFeedbackForm, StudentForm, \
-MovieForm, NameForm, AgeForm, QualificationForm
+MovieForm, NameForm, AgeForm, QualificationForm, AddItemForm
 # django level imports
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -150,3 +150,14 @@ def ResultView(request):
 	qualification = request.GET['qualification']
 	request.session['qualification'] = qualification
 	return render(request, 'testApp/session_manage/session_form_result.html')
+
+def add_item_view(request):
+	form = AddItemForm()
+	if request.method == "POST":
+		name = request.POST['name']
+		quantity = request.POST['quantity']
+		request.session['name'] = quantity
+	return render(request, 'testApp/session_manage/session_additem.html', {'form': form})
+
+def display_added_items(request):
+	return render(request, 'testApp/session_manage/display_additem.html')
