@@ -34,4 +34,5 @@ urlpatterns = [
 	url(r'^java_exams',  views.java_exams_view),
 	url(r'^python_exams',  views.python_exams_view),
 	url(r'^aptitude_exams',  views.aptitude_exams_view),
+	url(r'^signup_exam_portal',  views.SignupView),
 	]

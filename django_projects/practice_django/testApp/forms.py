@@ -1,6 +1,7 @@
 from django import forms
 from django.core import validators
 from testApp.models import Student, Movie
+from django.contrib.auth.models import User
 
 
 def starts_with_t(value):
@@ -70,3 +71,8 @@ class QualificationForm(forms.Form):
 class AddItemForm(forms.Form):
 	name = forms.CharField()
 	quantity = forms.IntegerField()
+
+class SignUpForm(forms.ModelForm):
+	class Meta:
+		model = User
+		fields = ['username',  'password', 'email', 'first_name', 'last_name']

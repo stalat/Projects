@@ -4,10 +4,10 @@ import datetime
 # application level imports
 from testApp.models import Student, Movie
 from testApp.forms import StudentRegistrationForm, StudentFeedbackForm, StudentForm, \
-MovieForm, NameForm, AgeForm, QualificationForm, AddItemForm
+MovieForm, NameForm, AgeForm, QualificationForm, AddItemForm, SignUpForm
 # django level imports
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse,  HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 
 # def welcome(request):
@@ -177,3 +177,14 @@ def python_exams_view(request):
 @login_required
 def aptitude_exams_view(request):
 	return render(request, 'testApp/auth_templates/aptitudeexams.html')
+
+def SignupView(request):
+	form = SignUpForm()
+	if request.method == "POST":
+		form = SignUpForm(request.POST)
+		user = form.save()
+		user.set_password(user.password)
+		user.save()
+		# return render(request, 'registration/registration_successful.html', {'form': form})
+		return HttpResponseRedirect('/accounts/login')
+	return render(request, 'registration/signup.html', {'form': form})

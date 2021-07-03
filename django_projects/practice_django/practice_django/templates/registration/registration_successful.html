@@ -3,12 +3,8 @@
 {% block body_block %}
 <div class="container" align="center">
 	<div class="jumbotron">
-<h1>Login to write exams</h1>
-<form method="POST">
-	{{ form.as_p }}
-	{% csrf_token %}
-	<input type="submit" class="btn btn-primary" name="" value="Login">
-</form>
+<h1>Thank you for registering to Exam Portal</h1>
+<a class="btn btn-primary btn-lg" href="/accounts/login" name="" value="Login now!">Login now!</a>
 </div>
 </div>
 {% endblock %}
