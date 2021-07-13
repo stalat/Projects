@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from testApp import views
+from testApp import views, cbf_views
 
 urlpatterns = [
 	url(r'^$',  views.welcome),
@@ -37,4 +37,7 @@ urlpatterns = [
 	url(r'^python_exams',  views.python_exams_view),
 	url(r'^aptitude_exams',  views.aptitude_exams_view),
 	url(r'^signup_exam_portal',  views.SignupView),
+
+	# class based views
+	url(r'^c_helloword',  cbf_views.HelloWorldView.as_view()),
 	]
