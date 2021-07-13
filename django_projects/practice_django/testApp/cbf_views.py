@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse,  HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
-from django.views.generic import View, TemplateView, ListView
+from django.views.generic import View, TemplateView, ListView, DetailView
 
 from testApp.models import Student, Movie
 
@@ -25,5 +25,10 @@ class HelloWorldTemplateContext(TemplateView):
 
 class MovieListView(ListView):
 	model = Movie
-	# default template will be book_list.html
-	# default context object will be book_list
+	# default template will be movie_list.html
+	# default context object will be movie_list
+
+class MovieDetailView(DetailView):
+	model = Movie
+	# default template will be movie_detail.html
+	# default context object will be movie or object

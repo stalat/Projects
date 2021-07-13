@@ -43,4 +43,6 @@ urlpatterns = [
 	url(r'^c_helloworld_temp',  cbf_views.HelloWorldTemplateView.as_view()),
 	url(r'^c_contextInfo',  cbf_views.HelloWorldTemplateContext.as_view()),
 	url(r'^c_movieList',  cbf_views.MovieListView.as_view()),
+	url(r'^c_movieDetail/(?P<pk>\d+)/$',  cbf_views.MovieDetailView.as_view()),
+
 	]

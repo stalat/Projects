@@ -5,7 +5,10 @@
 		Movies Information
 	</h1>
 	{% for movie in movie_list %}
-		<ul><li class="list-group-item">Movie Name: {{ movie.moviename }}</li>
+		<ul>
+			<li class="list-group-item">
+				Movie Name:<a href="/c_movieDetail/{{ movie.id }}"> {{ movie.moviename }}</a>
+			</li>
 			<li class="list-group-item">Movie Actor: {{ movie.actor }}</li></ul>
 	{% endfor %}
 {% endblock %}

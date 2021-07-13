@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends 'testApp/cbf_templates/base.html' %}
+{% block body_block %}
+	<h1>
+		{{ movie.moviename }} Information
+	</h1>
+		<ul><li class="list-group-item">Movie Name: {{ movie.moviename }}</li>
+			<li class="list-group-item">Movie Actor: {{ movie.actor }}</li>
+			<li class="list-group-item">Movie Actress: {{ movie.actress }}</li>
+			<li class="list-group-item">Release Date : {{ movie.rdate }}</li>
+			<li class="list-group-item">Rating : {{ movie.rating }}</li>
+		</ul>
+{% endblock %}
