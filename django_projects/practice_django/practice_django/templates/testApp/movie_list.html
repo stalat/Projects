@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+{% extends 'testApp/cbf_templates/base.html' %}
+{% block body_block %}
+	<h1>
+		Movies Information
+	</h1>
+	{% for movie in movie_list %}
+		<ul><li class="list-group-item">Movie Name: {{ movie.moviename }}</li>
+			<li class="list-group-item">Movie Actor: {{ movie.actor }}</li></ul>
+	{% endfor %}
+{% endblock %}

@@ -40,4 +40,7 @@ urlpatterns = [
 
 	# class based views
 	url(r'^c_helloword',  cbf_views.HelloWorldView.as_view()),
+	url(r'^c_helloworld_temp',  cbf_views.HelloWorldTemplateView.as_view()),
+	url(r'^c_contextInfo',  cbf_views.HelloWorldTemplateContext.as_view()),
+	url(r'^c_movieList',  cbf_views.MovieListView.as_view()),
 	]
