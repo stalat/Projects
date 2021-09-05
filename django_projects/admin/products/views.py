@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework import viewsets
+from rest_framework import viewsets, status
 from rest_framework.response import Response
 from .serializers import ProductSerializer
 from .models import Product
@@ -13,13 +13,24 @@ class ProductViewSet(viewsets.ViewSet):
         return Response(serializer.data)
 
     def create(self, request):  # /api/products/<str:id>
-        pass
+        serializer = ProductSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
     def retrieve(self, request, pk=None):  # /api/products/<str:id>
-        pass
+        product_data = Product.objects.get(id=pk)
+        serializer = ProductSerializer(product_data)
+        return Response(serializer.data)
 
     def update(self, request, pk=None):  # /api/products/<str:id>
-        pass
+        product_data = Product.objects.get(id=pk)
+        serializer = ProductSerializer(instance=product_data, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
 
     def destroy(self, request, pk=None):  # /api/products/<str:id>
-        pass
+        product_data = Product.objects.get(id=pk)
+        product_data.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
