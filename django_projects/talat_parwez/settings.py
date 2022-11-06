@@ -37,8 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'sin_app.apps.SinAppConfig'
-    'sin_app'
+    'sin_app.apps.SinAppConfig',
 ]
 
 MIDDLEWARE = [
@@ -136,7 +135,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'talat_parwez/static')
 
 # ALL FILES FROM THESE PATHS WILL BE COPIED TO STATIC ROOT
 STATICFILES_DIRS = (
-                       os.path.join(BASE_DIR, 'talat_parwez/sin_app/static'),
+                       os.path.join(BASE_DIR, 'sin_app/static'),
                     )
 
 DEFAULT_AUTO_FIELD='django.db.models.AutoField' 

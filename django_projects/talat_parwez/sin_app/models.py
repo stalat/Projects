@@ -12,7 +12,7 @@ class UserProfile(models.Model):
     company = models.CharField(max_length=100, blank=False)
     city = models.CharField(max_length=100, default='')
     website = models.URLField(default='')
-    phone = models.IntegerField(default=0)
+    phone = models.IntegerField(default=0000000000)
     image = models.ImageField(upload_to='profile_image', blank=True)
     resume = models.FileField(upload_to='resume_folder')
 
