@@ -5,7 +5,7 @@ pipeline {
         {
         steps {
             sh '''
-            chmod +x talat_parwez/envsetup.sh
+            chmod +x django_projects/talat_parwez/envsetup.sh
             ./envsetup.sh
             '''
             }
