@@ -11,7 +11,7 @@ ExecStart=/var/lib/jenkins/workspace/django-cicd/venv/bin/gunicorn \
         --workers 3 \
         --capture-output --log-level debug \
         --bind unix:/run/gunicorn.sock \
-         talat_parwez.wsgi:application
+         wsgi:application
 
 [Install]
 WantedBy=multi-user.target
