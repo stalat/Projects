@@ -11,7 +11,7 @@ fi
 echo $PWD
 source venv/bin/activate
 
-pip install -r requirements.txt
+pip install -r django_projects/talat_parwez/requirements.txt
 
 # For log files
 if [-d "logs"]
