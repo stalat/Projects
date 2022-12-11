@@ -1,0 +1,17 @@
+[Unit]
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/var/lib/jenkins/workspace/django-cicd/django_projects/talat_parwez
+ExecStart=/var/lib/jenkins/workspace/django-cicd/venv/bin/gunicorn \
+        --error-logfile /var/lib/jenkins/workspace/django-cicd/error.log \
+        --workers 3 \
+        --capture-output --log-level debug \
+        --bind unix:/run/gunicorn.sock \
+         django_projects.talat_parwez.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
