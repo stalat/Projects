@@ -5,7 +5,7 @@ pipeline {
         {
         steps {
             sh '''
-            chmod +x ./envsetup.sh
+            chmod +x talat_parwez/envsetup.sh
             ./envsetup.sh
             '''
             }
