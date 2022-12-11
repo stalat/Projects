@@ -3,7 +3,7 @@ Description=gunicorn daemon
 After=network.target
 
 [Service]
-User=ubuntu
+User=root
 Group=www-data
 WorkingDirectory=/var/lib/jenkins/workspace/django-cicd/django_projects/talat_parwez
 ExecStart=/var/lib/jenkins/workspace/django-cicd/venv/bin/gunicorn \
