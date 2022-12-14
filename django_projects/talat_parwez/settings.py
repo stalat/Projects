@@ -128,14 +128,14 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 # ALL MEDIA-FILES WILL BE COPIED OVER HERE WHILE UPLOADING
-MEDIA_ROOT = os.path.join(BASE_DIR, 'talat_parwez/media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # ALL FILES WILL BE COPIED OVER HERE FROM DIFFERENT APPS
-STATIC_ROOT = os.path.join(BASE_DIR, 'talat_parwez/static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # ALL FILES FROM THESE PATHS WILL BE COPIED TO STATIC ROOT
 STATICFILES_DIRS = (
-                       os.path.join(BASE_DIR, 'sin_app/static'),
+                       os.path.join(BASE_DIR, 'static'),
                     )
 
 DEFAULT_AUTO_FIELD='django.db.models.AutoField' 
