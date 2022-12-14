@@ -135,7 +135,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # ALL FILES FROM THESE PATHS WILL BE COPIED TO STATIC ROOT
 STATICFILES_DIRS = (
-                       os.path.join(BASE_DIR, 'static'),
+                       os.path.join(BASE_DIR, 'sin_app/static'),
                     )
 
 DEFAULT_AUTO_FIELD='django.db.models.AutoField' 
