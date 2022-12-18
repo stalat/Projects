@@ -17,7 +17,6 @@ class Home(TemplateView):
 
     def get(self, request):
         images = Portfolio.objects.all()
-        # import pdb;pdb.set_trace()
         company_details = CompanyProfile.objects.filter(user=1)[::-1]
         user_profile = UserProfile.objects.all()[0]
         response_generated = {
