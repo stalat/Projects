@@ -22,5 +22,3 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url('', include('sin_app.urls', namespace='sin_app')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 
-# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
-

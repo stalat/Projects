@@ -8,9 +8,31 @@ import mimetypes
 from django.conf import settings
 from django.http import HttpResponse
 from sin_app.models import Portfolio, UserProfile, CompanyProfile
-from django.views.generic import TemplateView, FormView
+from django.views.generic import TemplateView
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate
+from django.contrib.auth import login
+from django.shortcuts import render, redirect, reverse
 
-# Create your views here.
+# Authentication mechanism - Approach:1
+@login_required
+def home(request):
+    return render(request, 'registration/success.html', {})
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            login(request, user)
+            return redirect('home')
+    form = UserCreationForm()
+    return render(request, 'registration/register.html', {'form': form})
+
 
 class Home(TemplateView):
     template_name = 'index.html'
