@@ -5,6 +5,7 @@ import os
 from django.shortcuts import render
 from wsgiref.util import FileWrapper
 import mimetypes
+from django.contrib import messages
 from django.conf import settings
 from django.http import HttpResponse
 from sin_app.models import Portfolio, UserProfile, CompanyProfile
@@ -26,10 +27,12 @@ def register(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
+            password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=password)
             login(request, user)
-            return redirect('home')
+            return redirect('sin_app:home')
+        else:
+            messages.error(request, "Something went wrong")
     form = UserCreationForm()
     return render(request, 'registration/register.html', {'form': form})
 
