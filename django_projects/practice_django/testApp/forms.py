@@ -78,6 +78,8 @@ class SignUpForm(forms.ModelForm):
 		fields = ['username',  'password', 'email', 'first_name', 'last_name']
 
 class RegistrationForm(forms.Form):
+	# username is displayed on form as Username
+	# label changes the text we'll see on html form 
 	username = forms.CharField(max_length=150)
-	email = forms.CharField()
+	email = forms.CharField(label='E-Mail')
 	password = forms.CharField(widget=forms.PasswordInput)
