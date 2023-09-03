@@ -7,12 +7,9 @@ from testApp.forms import StudentRegistrationForm, StudentFeedbackForm, StudentF
 MovieForm, NameForm, AgeForm, QualificationForm, AddItemForm, SignUpForm
 # django level imports
 from django.shortcuts import render, redirect
-from django.http import HttpResponse,  HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 
-# def welcome(request):
-# 	s = "<h1>Welcome to Django classes. {0}</h1>".format(str(datetime.datetime.now()))
-# 	return HttpResponse(s)
 
 def welcome(request):
 	return render(request, 'testApp/mono_wish.html')

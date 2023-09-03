@@ -1,7 +1,8 @@
-from django.conf.urls import url
-from testApp import views, cbf_views
+from django.urls import include, re_path as url
+from testApp import views, cbf_views, auth_views
 
 urlpatterns = [
+    url(r'^register_1',  auth_views.register_1, name='register_1'),
 	url(r'^$',  views.welcome),
 	url(r'^tempView',  views.tempView),
 	url(r'^staticView',  views.staticView),
@@ -44,5 +45,6 @@ urlpatterns = [
 	url(r'^c_contextInfo',  cbf_views.HelloWorldTemplateContext.as_view()),
 	url(r'^c_movieList',  cbf_views.MovieListView.as_view()),
 	url(r'^c_movieDetail/(?P<pk>\d+)/$',  cbf_views.MovieDetailView.as_view()),
-
+    
+	# InterviewPrep
 	]
