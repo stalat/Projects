@@ -3,6 +3,7 @@ from testApp import views, cbf_views, auth_views
 
 urlpatterns = [
     url(r'^register_1',  auth_views.register_1, name='register_1'),
+    url(r'^register_2',  auth_views.register_2, name='form_submit_url'),
 	url(r'^$',  views.welcome),
 	url(r'^tempView',  views.tempView),
 	url(r'^staticView',  views.staticView),

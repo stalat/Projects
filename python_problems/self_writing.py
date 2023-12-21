@@ -1,7 +1,7 @@
 def self_writing():
 	f=open("self_writing.py")
 	t=f.read()
-	print t
+	print(t)
 	f.close()
 
 if __name__=='__main__':

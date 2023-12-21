@@ -1,11 +1,11 @@
 def fibonacci(n):
     a,b=0,1
-    print a
-    print b
+    print(a)
+    print(b)
     for i in range(n):
         c=a+b
         a,b=b,c
-        print c
+        print(c)
     
 fibonacci(8)
 ________________________________________________________________________
@@ -17,4 +17,4 @@ def fibonacci(n):
     else:
         return fibonacci(n-1)+fibonacci(n-2)
 
-print fibonacci(8)
+print(fibonacci(8))

@@ -36,8 +36,3 @@ t='/stalat/JIVA551/jiva_buildout/src/jivacore.ui'
 	#retvalue = os.system("git log -3 --pretty=oneline")
 	#os.chdir("/stalat/JIVA551/jiva_buildout/src/jivacore.ui")
 """
-	
-
-
-
-

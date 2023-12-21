@@ -8,7 +8,7 @@ else:
     #The logging files are having the value as /home/stalat/test.log
     logging_file=os.path.join(os.getenv('HOME'),'test.log')
 time.sleep(5)
-print "Logging to ",logging_file
+print("Logging to ",logging_file)
 logging.basicConfig(
 level=logging.DEBUG,
 format='%(asctime)s,:%(levelname)s,:%(message)s',

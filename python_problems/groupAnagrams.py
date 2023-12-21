@@ -55,7 +55,3 @@ def twoNumberSum(array, targetSum):
         
 print(twoNumberSum(array=[3, 5, -4, 8, 11, 1, -1, 6], targetSum=10))
 """
-
-def threeNumberSum(array, targetSum):
-     
-print(threeNumberSum(array=[12, 3, 1, 2, -6, 5, 0, -8, -1], targetSum=0))

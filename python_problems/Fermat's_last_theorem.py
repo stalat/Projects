@@ -34,7 +34,7 @@ for i in [10, 100, 500, 1000]:
                 for _d in d:
                     #print _a, _b, _c, _d
                     pass
-    print "For i=", i, start,time.time(), "Generator"
+    print("For i=", i, start,time.time(), "Generator")
     
     start = time.time()
     
@@ -44,4 +44,4 @@ for i in [10, 100, 500, 1000]:
                 for _d in range(i):
                     pass
     
-    print "For i=", i, start,time.time()
+    print("For i=", i, start,time.time())

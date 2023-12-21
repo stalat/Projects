@@ -18,3 +18,18 @@ def register_1(request):
         form = RegistrationForm()
     context = {'form': form}
     return render(request, 'registration/register_1.html', context)
+
+def register_2(request):
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['password']
+            user = User.objects.create(username=username, email=email, password=password)
+            login(request, user)
+            return redirect('profile')
+    else:
+        form = RegistrationForm()
+    context = {'form': form}
+    return render(request, 'registration/register_1.html', context)

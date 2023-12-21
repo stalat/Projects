@@ -4,7 +4,7 @@ def foo(a,b,c,d=1,e=2):
     print(sys.argv, len(sys.argv))"""
     
 while True:
-    print "Hello"
+    print("Hello")
 
 
 if __name__=="__main__":
