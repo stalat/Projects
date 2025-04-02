@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         PROJECT_NAME = 'django-fullstack'
-        IMAGE_NAME = 'gcr.io/tp-deployment-project/django-fullstack'
+        IMAGE_NAME = 'us-central1-docker.pkg.dev/tp-deployment-project/django-fullstack/django-fullstack'
         GCP_VM_IP = '35.224.94.179'
         SSH_USER = 'root'
     }
@@ -25,12 +25,12 @@ pipeline {
             }
         }
 
-        stage('Push to GCR') {
+        stage('Push to Artifact Registry') {
             steps {
                 withCredentials([file(credentialsId: 'gcp-key', variable: 'GCLOUD_KEY')]) {
                     sh '''
                         gcloud auth activate-service-account --key-file=$GCLOUD_KEY
-                        gcloud auth configure-docker --quiet
+                        gcloud auth configure-docker us-central1-docker.pkg.dev --quiet
                         docker push ${IMAGE_NAME}
                     '''
                 }
