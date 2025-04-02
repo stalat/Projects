@@ -40,25 +40,29 @@ pipeline {
         stage('Deploy on GCP VM') {
             steps {
                 sshagent(credentials: ['gcp-ssh-key']) {
-                    sh """
-                        ssh -o StrictHostKeyChecking=no ${SSH_USER}@${GCP_VM_IP} '
-                            if [ ! -d /root/django-fullstack ]; then
-                                echo "📦 Cloning repo first time..."
-                                git clone https://github.com/stalat/Projects.git /root/django-fullstack
-                            fi
+                    withCredentials([file(credentialsId: 'django-env-file', variable: 'ENV_FILE')]) {
+                        sh """
+                            scp -o StrictHostKeyChecking=no \$ENV_FILE ${SSH_USER}@${GCP_VM_IP}:/root/django-fullstack/django_projects/django-fullstack/.env
 
-                            cd /root/django-fullstack/django_projects/django-fullstack
+                            ssh -o StrictHostKeyChecking=no ${SSH_USER}@${GCP_VM_IP} '
+                                if [ ! -d /root/django-fullstack ]; then
+                                    echo "📦 Cloning repo first time..."
+                                    git clone https://github.com/stalat/Projects.git /root/django-fullstack
+                                fi
 
-                            echo "🔄 Pulling latest code..."
-                            git pull
+                                cd /root/django-fullstack/django_projects/django-fullstack
 
-                            echo "🧹 Shutting down existing containers..."
-                            docker-compose down
+                                echo "🔄 Pulling latest code..."
+                                git pull
 
-                            echo "🚀 Building and starting containers..."
-                            docker-compose up -d --build
-                        '
-                    """
+                                echo "🧹 Shutting down existing containers..."
+                                docker-compose down
+
+                                echo "🚀 Building and starting containers..."
+                                docker-compose up -d --build
+                            '
+                        """
+                    }
                 }
             }
         }
