@@ -42,9 +42,20 @@ pipeline {
                 sshagent(credentials: ['gcp-ssh-key']) {
                     sh """
                         ssh -o StrictHostKeyChecking=no ${SSH_USER}@${GCP_VM_IP} '
-                            cd /root/django-fullstack
+                            if [ ! -d /root/django-fullstack ]; then
+                                echo "📦 Cloning repo first time..."
+                                git clone https://github.com/stalat/Projects.git /root/django-fullstack
+                            fi
+
+                            cd /root/django-fullstack/django_projects/django-fullstack
+
+                            echo "🔄 Pulling latest code..."
                             git pull
+
+                            echo "🧹 Shutting down existing containers..."
                             docker-compose down
+
+                            echo "🚀 Building and starting containers..."
                             docker-compose up -d --build
                         '
                     """
