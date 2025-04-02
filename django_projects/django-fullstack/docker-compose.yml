@@ -20,6 +20,7 @@ services:
     working_dir: /app/app
     volumes:
       - .:/app
+      - static_volume:/app/app/staticfiles  # Share with nginx
     ports:
       - "8000:8000"
     depends_on:
@@ -28,5 +29,17 @@ services:
     env_file:
       - .env
 
+  nginx:
+    image: nginx:latest
+    container_name: django-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - static_volume:/static  # Mount static files
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - web
+
 volumes:
   postgres_data:
+  static_volume:

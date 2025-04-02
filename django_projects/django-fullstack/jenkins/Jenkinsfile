@@ -42,12 +42,10 @@ pipeline {
                 sshagent(credentials: ['gcp-ssh-key']) {
                     sh """
                         ssh -o StrictHostKeyChecking=no ${SSH_USER}@${GCP_VM_IP} '
-                            docker pull ${IMAGE_NAME}
-                            docker stop django-fullstack || true
-                            docker rm django-fullstack || true
-                            docker run -d --name django-fullstack \
-                                --env-file /root/.env \
-                                -p 80:8000 ${IMAGE_NAME}
+                            cd /root/django-fullstack
+                            git pull
+                            docker-compose down
+                            docker-compose up -d --build
                         '
                     """
                 }
