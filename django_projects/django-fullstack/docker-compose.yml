@@ -20,7 +20,7 @@ services:
     working_dir: /app/app
     volumes:
       - .:/app
-      - static_volume:/app/app/staticfiles  # Share with nginx
+      - static_volume:/app/app/static  # Share with nginx
     ports:
       - "8000:8000"
     depends_on:
